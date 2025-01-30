@@ -171,8 +171,9 @@ $third-color: rgb(56, 36, 0);
 }
 
 .hvr-shutter-in-horizontal {
-  border: 1px solid transparent;
+  border: 1px solid $second-color;
   box-sizing: border-box;
+  background: white;
 }
 
 .hvr-shutter-in-horizontal:hover {
