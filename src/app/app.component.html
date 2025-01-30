@@ -67,16 +67,7 @@
   <div class="container">
     <h2 class="products-title" id="pizzas">Выберите свою любимую пиццу </h2>
     <div class="products-items">
-      <div class="product" *ngFor="let product of products; let i = index;">
-        <a class="product-image" href="assets/images/products/{{product.image}}">
-          <img [src]="'assets/images/products/' + product.image" alt="pizza image {{ i + 1 }}">
-        </a>
-        <div class="product-title">{{ product.title }}</div>
-        <div class="product-text">{{ product.description }}</div>
-        <div class="product-action">
-          <button class="btn btn-add-to-cart" (click)="addToCart(product, orderElement)">В корзину</button>
-        </div>
-      </div>
+      <product *ngFor="let product of products" [product]="product"></product>
     </div>
   </div>
 </section>

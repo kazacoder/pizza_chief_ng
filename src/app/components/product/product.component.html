@@ -1,0 +1,13 @@
+<div class="product">
+  <a class="product-image" href="assets/images/products/{{product.image}}">
+    <img [src]="'assets/images/products/' + product.image" alt="pizza image {{ 0 + 1 }}">
+  </a>
+  <div class="product-title">{{ product.title }}</div>
+  <div class="product-text">{{ product.description }}</div>
+  <div class="product-action">
+    <button class="btn btn-add-to-cart" >В корзину</button>
+  </div>
+</div>
+
+
+<!--(click)="addToCart(product, orderElement)"-->

@@ -36,3 +36,16 @@ body {
     padding-right: 15px;
   }
 }
+
+.btn {
+  border: none;
+  background-color: rgb(255, 175, 24);
+  width: 224px;
+  outline: none;
+  padding: 22px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: MullerBold, sans-serif;
+  color: rgb(56, 36, 0);
+  cursor: pointer;
+}
