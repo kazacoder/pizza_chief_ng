@@ -49,36 +49,36 @@ export class ProductComponent implements OnInit, OnChanges, DoCheck, AfterConten
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('ngOnChanges', changes);
+    // console.log('ngOnChanges', changes);
   }
 
   ngOnInit(): void {
-    console.log('ngOnInit');
+    // console.log('ngOnInit');
   }
 
   ngDoCheck() {
-    console.log('ngDoCheck');
+    // console.log('ngDoCheck');
   }
 
   ngAfterContentInit() {
-    console.log('ngAfterContentInit');
+    // console.log('ngAfterContentInit');
   }
 
   ngAfterContentChecked() {
-    console.log('ngAfterContentChecked');
+    // console.log('ngAfterContentChecked');
   }
 
   ngAfterViewInit(): void {
-    console.log('ngAfterViewInit', this.elem);
+    // console.log('ngAfterViewInit', this.elem);
     // console.log(this.elem);
   }
 
   ngAfterViewChecked() {
-    console.log('ngAfterViewChecked');
+    // console.log('ngAfterViewChecked');
   }
 
   ngOnDestroy() {
-    console.log('ngOnDestroy')
+    // console.log('ngOnDestroy')
   }
 
   addProductToCart(): void {

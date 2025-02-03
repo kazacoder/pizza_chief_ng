@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProductComponent } from './components/product/product.component';
 import { TitleComponent } from './components/title/title.component';
 import { TextComponent } from './components/text/text.component';
+import { CoolInputDirective } from './directives/cool-input.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TextComponent } from './components/text/text.component';
     FooterComponent,
     ProductComponent,
     TitleComponent,
-    TextComponent
+    TextComponent,
+    CoolInputDirective
   ],
   imports: [
     BrowserModule,
