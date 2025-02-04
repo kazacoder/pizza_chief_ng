@@ -1,4 +1,5 @@
-<div class="product" *isChicken="product.description">
+<!--<div class="product" *isChicken="product.description">-->
+<div class="product">
 
   <div *ngIf="product.image; then productImageBlock else defaultImageBlock"></div>
 
@@ -21,4 +22,5 @@
   <div class="product-action" #elem>
     <button class="btn btn-add-to-cart" (click)="addProductToCart()">В корзину</button>
   </div>
+<!--  <div>{{ product.datetime | date:'full' | uppercase }}</div>-->
 </div>

@@ -45,6 +45,7 @@ export class ProductComponent implements OnInit, OnChanges, DoCheck, AfterConten
       image: '',
       title: '',
       description: '',
+      datetime: '',
     }
   }
 

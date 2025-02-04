@@ -12,42 +12,50 @@ export class AppComponent {
     {
       image: 'pizza_image_1.png',
       title: 'Мясная Делюкс',
-      description: `Пепперони, лук, бекон, томатная паста, колбаски, перец, грибы, соус чили, ананасы`
+      description: `Пепперони, лук, бекон, томатная паста, колбаски, перец, грибы, соус чили, ананасы`,
+      datetime: '2025-02-04 15:01:00',
     },
     {
       image: '',
       title: 'Морская Премиум',
-      description: `Перец, сыр, креветки, кальмары, мидии, лосось`
+      description: `Перец, сыр, креветки, кальмары, мидии, лосось`,
+      datetime: '2025-02-04 11:06:00',
     },
     {
       image: 'pizza_image_3.png',
       title: 'Бекон и Сосиски',
-      description: `Бекон, сыр, сосиски, ананас, томатная паста`
+      description: `Бекон, сыр, сосиски, ананас, томатная паста`,
+      datetime: '2025-12-04 15:00:00',
     },
     {
       image: 'pizza_image_4.png',
       title: 'Куриная Делюкс',
-      description: `Курица, ананас, сыр Пепперони, соус для пиццы, томатная паста`
+      description: `Курица, ананас, сыр Пепперони, соус для пиццы, томатная паста`,
+      datetime: '2025-02-28 13:00:00',
     },
     {
       image: 'pizza_image_5.png',
       title: 'Барбекю Премиум',
-      description: `Свинина BBQ, соус Барбкею, сыр, курица, соус для пиццы, соус чили`
+      description: `Свинина BBQ, соус Барбкею, сыр, курица, соус для пиццы, соус чили`,
+      datetime: '2025-02-04 15:00:00',
     },
     {
       image: 'pizza_image_6.png',
       title: 'Пепперони Дабл',
-      description: `Пепперони, сыр, колбаса 2 видов: обжаренная и вареная`
+      description: `Пепперони, сыр, колбаса 2 видов: обжаренная и вареная`,
+      datetime: '2025-02-04 05:00:00',
     },
     {
       image: 'pizza_image_7.png',
       title: 'Куриное трио',
-      description: `Жареная курица, Тушеная курица, Куриные наггетсы, перец, сыр, грибы, соус для пиццы`
+      description: `Жареная курица, Тушеная курица, Куриные наггетсы, перец, сыр, грибы, соус для пиццы`,
+      datetime: '2025-02-04 15:00:00',
     },
     {
       image: 'pizza_image_8.png',
       title: 'Сырная',
-      description: `Сыр Джюгас, Сыр с плесенью, Сыр Моцарелла, Сыр секретный`
+      description: `Сыр Джюгас, Сыр с плесенью, Сыр Моцарелла, Сыр секретный`,
+      datetime: '2025-02-04 15:00:00',
     },
   ]
 
@@ -57,6 +65,8 @@ export class AppComponent {
     name: '',
     phone: '',
   }
+
+  lateData: Promise<string> | null = null;
 
   public scrollTo(target: HTMLElement): void {
     target.scrollIntoView({ behavior: 'smooth' });
@@ -87,6 +97,12 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
+    this.lateData = new Promise<string>(function (resolve, reject) {
+      setTimeout(() => {
+        resolve('hello');
+      }, 3000)
+    })
+
     const scripts = ['jquery-3.7.1.min.js', 'wow.min.js', 'jquery.magnific-popup.min.js', 'parallax.min.js', 'jquery.inputmask.min.js']
 
 
