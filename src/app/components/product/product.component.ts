@@ -13,12 +13,15 @@ import {
 } from '@angular/core';
 import {ProductType} from "../../types/product.type";
 import {TitleComponent} from "../title/title.component";
+import {ProductService} from "../../services/product.service";
+import {CartProductService} from "../../services/cart-product.service";
 
 @Component({
   selector: 'product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss'],
-  // encapsulation: ViewEncapsulation.None
+  // encapsulation: ViewEncapsulation.None,
+  providers: [CartProductService],
 })
 export class ProductComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked,
   AfterViewInit, AfterViewChecked, OnDestroy {
@@ -40,7 +43,7 @@ export class ProductComponent implements OnInit, OnChanges, DoCheck, AfterConten
   @ViewChild('elem')
   private elem!: ElementRef;
 
-  constructor() {
+  constructor(public cartProductService: CartProductService) {
     this.product = {
       image: '',
       title: '',
@@ -83,6 +86,7 @@ export class ProductComponent implements OnInit, OnChanges, DoCheck, AfterConten
   }
 
   addProductToCart(): void {
+    this.cartProductService.count ++;
     this.addToCartEvent.emit(this.titleComponent.toUpper());
   }
 

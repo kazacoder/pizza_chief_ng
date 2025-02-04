@@ -1,63 +1,17 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ProductType} from "./types/product.type";
+import {ProductService} from "./services/product.service";
+import {CartService} from "./services/cart.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./css/animate.min.css', './css/hover-min.css', './css/magnific-popup.css', './app.component.scss', ],
+  providers: []
 })
-export class AppComponent {
-  // pizza_image_2.png
-  public products: ProductType[] = [
-    {
-      image: 'pizza_image_1.png',
-      title: 'Мясная Делюкс',
-      description: `Пепперони, лук, бекон, томатная паста, колбаски, перец, грибы, соус чили, ананасы`,
-      datetime: '2025-02-04 15:01:00',
-    },
-    {
-      image: '',
-      title: 'Морская Премиум',
-      description: `Перец, сыр, креветки, кальмары, мидии, лосось`,
-      datetime: '2025-02-04 11:06:00',
-    },
-    {
-      image: 'pizza_image_3.png',
-      title: 'Бекон и Сосиски',
-      description: `Бекон, сыр, сосиски, ананас, томатная паста`,
-      datetime: '2025-12-04 15:00:00',
-    },
-    {
-      image: 'pizza_image_4.png',
-      title: 'Куриная Делюкс',
-      description: `Курица, ананас, сыр Пепперони, соус для пиццы, томатная паста`,
-      datetime: '2025-02-28 13:00:00',
-    },
-    {
-      image: 'pizza_image_5.png',
-      title: 'Барбекю Премиум',
-      description: `Свинина BBQ, соус Барбкею, сыр, курица, соус для пиццы, соус чили`,
-      datetime: '2025-02-04 15:00:00',
-    },
-    {
-      image: 'pizza_image_6.png',
-      title: 'Пепперони Дабл',
-      description: `Пепперони, сыр, колбаса 2 видов: обжаренная и вареная`,
-      datetime: '2025-02-04 05:00:00',
-    },
-    {
-      image: 'pizza_image_7.png',
-      title: 'Куриное трио',
-      description: `Жареная курица, Тушеная курица, Куриные наггетсы, перец, сыр, грибы, соус для пиццы`,
-      datetime: '2025-02-04 15:00:00',
-    },
-    {
-      image: 'pizza_image_8.png',
-      title: 'Сырная',
-      description: `Сыр Джюгас, Сыр с плесенью, Сыр Моцарелла, Сыр секретный`,
-      datetime: '2025-02-04 15:00:00',
-    },
-  ]
+export class AppComponent implements OnInit {
+
+  public products: ProductType[] = []
 
   public formValues = {
     productTitle: '',
@@ -68,6 +22,11 @@ export class AppComponent {
 
   lateData: Promise<string> | null = null;
 
+  constructor(private productService: ProductService,
+              public cartService: CartService) {
+
+  }
+
   public scrollTo(target: HTMLElement): void {
     target.scrollIntoView({ behavior: 'smooth' });
   }
@@ -76,6 +35,7 @@ export class AppComponent {
     this.scrollTo(target);
     this.formValues.productTitle = title;
     // this.products = this.products.filter(item => item.title.toUpperCase() !== title.toUpperCase());
+    this.cartService.count ++
   }
 
   public createOrder() {
@@ -115,6 +75,7 @@ export class AppComponent {
       document.getElementsByTagName('body')[0].appendChild(node);
 
     })
+    this.products = this.productService.getProducts();
   }
 
 
