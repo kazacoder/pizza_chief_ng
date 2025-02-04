@@ -7,7 +7,7 @@ import {ProductType} from "./types/product.type";
   styleUrls: ['./css/animate.min.css', './css/hover-min.css', './css/magnific-popup.css', './app.component.scss', ],
 })
 export class AppComponent {
-
+  // pizza_image_2.png
   public products: ProductType[] = [
     {
       image: 'pizza_image_1.png',
@@ -15,7 +15,7 @@ export class AppComponent {
       description: `Пепперони, лук, бекон, томатная паста, колбаски, перец, грибы, соус чили, ананасы`
     },
     {
-      image: 'pizza_image_2.png',
+      image: '',
       title: 'Морская Премиум',
       description: `Перец, сыр, креветки, кальмары, мидии, лосось`
     },

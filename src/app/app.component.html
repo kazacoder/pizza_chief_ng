@@ -88,7 +88,10 @@
     </div>
     <div class="order-form">
 
-        <input type="text" class="order-input" coolInput id="name-input" placeholder="Ваше имя" [(ngModel)]="formValues.name">
+        <input type="text" class="order-input" coolInput id="name-input"
+               [coolInputDefaultBgColor]="'grey'"
+               [coolInputFocusBgColor]="'red'"
+               placeholder="Ваше имя" [(ngModel)]="formValues.name">
         <input type="text" class="order-input" id="product-input" placeholder="Пицца" [(ngModel)]="formValues.productTitle">
         <input type="text" class="order-input" id="address-input" placeholder="Адрес доставки" name="address" [(ngModel)]="formValues.address">
         <input type="text" class="order-input" coolInput id="phone-input" placeholder="Телефон" [(ngModel)]="formValues.phone">

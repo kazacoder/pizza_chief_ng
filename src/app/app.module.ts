@@ -10,6 +10,7 @@ import { ProductComponent } from './components/product/product.component';
 import { TitleComponent } from './components/title/title.component';
 import { TextComponent } from './components/text/text.component';
 import { CoolInputDirective } from './directives/cool-input.directive';
+import { IsChickenDirective } from './directives/is-chicken.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CoolInputDirective } from './directives/cool-input.directive';
     ProductComponent,
     TitleComponent,
     TextComponent,
-    CoolInputDirective
+    CoolInputDirective,
+    IsChickenDirective
   ],
   imports: [
     BrowserModule,

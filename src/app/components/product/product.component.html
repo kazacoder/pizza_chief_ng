@@ -1,10 +1,21 @@
-<div class="product">
-  <a class="product-image" href="assets/images/products/{{product.image}}">
-    <img [src]="'assets/images/products/' + product.image" alt="pizza image {{ 0 + 1 }}">
-  </a>
+<div class="product" *isChicken="product.description">
+
+  <div *ngIf="product.image; then productImageBlock else defaultImageBlock"></div>
+
+  <ng-template #productImageBlock>
+    <a class="product-image" href="assets/images/products/{{product.image}}">
+      <img [src]="'assets/images/products/' + product.image" alt="pizza image {{ 0 + 1 }}">
+    </a>
+  </ng-template>
+
+  <ng-template #defaultImageBlock>
+    <a class="product-image" href="assets/images/pizzzzza.png">
+      <img [src]="'assets/images/pizzzzza.png'" alt="pizza image {{ 0 + 1 }}">
+    </a>
+  </ng-template>
   <custom-title [title]="product.title">
-<!--    <p first>test message</p>-->
-<!--    <p second #second>wow</p>-->
+    <!--    <p first>test message</p>-->
+    <!--    <p second #second>wow</p>-->
   </custom-title>
   <text-component [description]="product.description" #description></text-component>
   <div class="product-action" #elem>
