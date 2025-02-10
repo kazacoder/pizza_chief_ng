@@ -1,4 +1,4 @@
-import {Component, ContentChild, ElementRef, Input, OnInit} from '@angular/core';
+import {Component, ContentChild, ElementRef, Input} from '@angular/core';
 
 @Component({
   selector: 'custom-title',
