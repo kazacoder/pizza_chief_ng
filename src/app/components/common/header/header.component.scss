@@ -31,6 +31,10 @@
   cursor: pointer;
 }
 
+.menu-item a.active {
+  color: black;
+}
+
 
 .burger {
   display: none;

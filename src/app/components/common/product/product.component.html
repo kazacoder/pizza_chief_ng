@@ -10,7 +10,7 @@
   </ng-template>
 
   <ng-template #defaultImageBlock>
-    <a class="product-image" href="assets/images/pizzzzza.png">
+    <a class="product-image" href="../../../../assets/images/pizzzzza.png">
       <img [src]="'assets/images/pizzzzza.png'" alt="pizza image {{ 0 + 1 }}">
     </a>
   </ng-template>
@@ -22,6 +22,5 @@
   <div class="product-action" #elem>
     <button class="btn btn-add-to-cart" (click)="addProductToCart()">В корзину</button>
   </div>
-  <div>{{ cartProductService.getCommonCount() }}</div>
 <!--  <div>{{ product.datetime | date:'full' | uppercase }}</div>-->
 </div>
