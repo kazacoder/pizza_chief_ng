@@ -15,13 +15,13 @@ import {TitleComponent} from "../title/title.component";
 import {CartProductService} from "../../../services/cart-product.service";
 
 @Component({
-  selector: 'product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss'],
+  selector: 'product-card',
+  templateUrl: './product-card.component.html',
+  styleUrls: ['./product-card.component.scss'],
   // encapsulation: ViewEncapsulation.None,
   providers: [CartProductService],
 })
-export class ProductComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked,
+export class ProductCardComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked,
   AfterViewInit, AfterViewChecked, OnDestroy {
   @Input() product: ProductType;
   // get product(): ProductType {
@@ -43,6 +43,7 @@ export class ProductComponent implements OnInit, OnChanges, DoCheck, AfterConten
 
   constructor(public cartProductService: CartProductService) {
     this.product = {
+      id: 0,
       image: '',
       title: '',
       description: '',

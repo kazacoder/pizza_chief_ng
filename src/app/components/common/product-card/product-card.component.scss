@@ -26,6 +26,17 @@
   padding: 17px;
 }
 
+.product-action .btn.btn-white {
+  margin-top: 10px;
+}
+
+
+
+.product-action {
+  display: flex;
+  flex-direction: column;
+}
+
 @media screen and (max-width: 1229px) {
   .products-items {
     justify-content: center;

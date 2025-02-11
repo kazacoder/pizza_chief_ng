@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
 import { HeaderComponent } from './components/common/header/header.component';
 import { FooterComponent } from './components/common/footer/footer.component';
-import { ProductComponent } from './components/common/product/product.component';
+import { ProductCardComponent } from './components/common/product-card/product-card.component';
 import { TitleComponent } from './components/common/title/title.component';
 import { TextComponent } from './components/common/text/text.component';
 import { CoolInputDirective } from './directives/cool-input.directive';
@@ -19,13 +19,14 @@ import { MainComponent } from './components/pages/main/main.component';
 import { AboutComponent } from './components/pages/about/about.component';
 import { OrderComponent } from './components/pages/order/order.component';
 import { ProductsComponent } from './components/pages/products/products.component';
+import { ProductComponent } from './components/pages/product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ProductComponent,
+    ProductCardComponent,
     TitleComponent,
     TextComponent,
     CoolInputDirective,
@@ -36,7 +37,8 @@ import { ProductsComponent } from './components/pages/products/products.componen
     MainComponent,
     AboutComponent,
     OrderComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
