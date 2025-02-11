@@ -48,8 +48,8 @@
       </ul>
     </nav>
     <div class="cart">
-      <a href="#" (click)="login()">Войти</a>
-      <a href="#" (click)="logout()">Выйти</a>
+      <a href="#" (click)="login()" *ngIf="!loggedState">Войти</a>
+      <a href="#" (click)="logout()" *ngIf="loggedState">Выйти</a>
 <!--      <img src="../../../../assets/images/cart.png" alt="Cart">-->
     </div>
   </div>

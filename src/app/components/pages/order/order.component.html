@@ -2,10 +2,10 @@
 <section class="order" id="order">
   <div class="container">
     <div class="order-text">
-      <a routerLink="/order" [queryParams]="{product: 'test'}" class="order-text-title double-title">
+      <a routerLink="/order" [queryParams]="{product: formValues.productTitle + ' 1'}" class="order-text-title double-title">
         <span>Хватит думать!</span> Доставим заказ за 30 минут!
       </a>
-      <div class="order-text-message">
+      <div class="order-text-message" (click)="test()">
         Мы гарантированно доставим вашу пиццу за 30 минут с момента оформления заказа. Если мы опоздаем даже на
         1
         минуту - вы получаете весь заказ бесплатно и ваучер на скидку на следующий заказ. Мы гордимся нашим
