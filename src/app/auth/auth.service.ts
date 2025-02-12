@@ -24,4 +24,9 @@ export class AuthService {
   isLoggedIn(): boolean {
     return this.isLogged;
   }
+
+  getToken(): string {
+    return 'test'
+  }
+
 }

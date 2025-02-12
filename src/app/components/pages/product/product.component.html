@@ -2,19 +2,9 @@
   <div class="container">
     <h2 class="products-title">Описание пиццы</h2>
     <div class="product-item">
-      <div *ngIf="product.image; then productImageBlock else defaultImageBlock"></div>
-
-      <ng-template #productImageBlock>
-        <a class="product-image" href="assets/images/products/{{product.image}}">
-          <img [src]="'assets/images/products/' + product.image" alt="pizza image">
-        </a>
-      </ng-template>
-
-      <ng-template #defaultImageBlock>
-        <a class="product-image" href="../../../../assets/images/pizzzzza.png">
-          <img [src]="'assets/images/pizzzzza.png'" alt="pizza image">
-        </a>
-      </ng-template>
+      <div class="product-image">
+        <img [src]="product.image" alt="pizza image">
+      </div>
       <custom-title [title]="product.title">
       </custom-title>
       <text-component [description]="product.description" #description></text-component>

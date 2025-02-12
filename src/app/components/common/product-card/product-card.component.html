@@ -1,28 +1,12 @@
-<!--<div class="product" *isChicken="product.description">-->
 <div class="product">
-
-  <div *ngIf="product.image; then productImageBlock else defaultImageBlock"></div>
-
-  <ng-template #productImageBlock>
-    <a class="product-image" href="assets/images/products/{{product.image}}">
-      <img [src]="'assets/images/products/' + product.image" alt="pizza image">
-    </a>
-  </ng-template>
-
-  <ng-template #defaultImageBlock>
-    <a class="product-image" href="../../../../assets/images/pizzzzza.png">
-      <img [src]="'assets/images/pizzzzza.png'" alt="pizza image">
-    </a>
-  </ng-template>
+  <div class="product-image">
+    <img [src]="product.image" alt="pizza image">
+  </div>
   <custom-title [title]="product.title">
-    <!--    <p first>test message</p>-->
-    <!--    <p second #second>wow</p>-->
   </custom-title>
-  <text-component [description]="product.description" #description></text-component>
+  <text-component [description]="product.description"></text-component>
   <div class="product-action" #elem>
     <a class="btn btn-add-to-cart" routerLink="/order" [queryParams]="{product: product.title}">В корзину</a>
     <a class="btn btn-white" [routerLink]="['/products', product.id]">Подробнее</a>
-<!--    <button class="btn btn-add-to-cart" (click)="addProductToCart()">В корзину</button>-->
   </div>
-<!--  <div>{{ product.datetime | date:'full' | uppercase }}</div>-->
 </div>

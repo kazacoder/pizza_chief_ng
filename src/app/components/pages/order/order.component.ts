@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {CartService} from "../../../services/cart.service";
 import {ActivatedRoute} from "@angular/router";
 import {Subscription} from "rxjs";
+import {ProductService} from "../../../services/product.service";
 
 @Component({
   selector: 'app-order',
@@ -17,8 +18,11 @@ export class OrderComponent implements OnInit, OnDestroy {
   }
 
   private subscription: Subscription | null = null;
+  private subscriptionOrder: Subscription | null = null;
 
-  constructor(private cartService: CartService, private activatedRoute: ActivatedRoute) { }
+  constructor(private cartService: CartService,
+              private activatedRoute: ActivatedRoute,
+              private productService: ProductService,) { }
 
   ngOnInit(): void {
     // if (this.cartService.product) {
@@ -50,12 +54,26 @@ export class OrderComponent implements OnInit, OnDestroy {
       }
     }
 
-    this.formValues = {
-      productTitle: '',
-      address: '',
-      name: '',
-      phone: '',
-    }
+    this.subscriptionOrder = this.productService.createOrder({
+      product: this.formValues.productTitle,
+      address: this.formValues.address,
+      phone: this.formValues.phone,
+    })
+      .subscribe(response => {
+        if (response.success && !response.message) {
+          alert('Спасибо за заказ');
+          this.formValues = {
+            productTitle: '',
+            address: '',
+            name: '',
+            phone: '',
+          }
+        } else {
+          alert('ошибка')
+        }
+      })
+
+
   }
 
   test() {
@@ -64,6 +82,7 @@ export class OrderComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscription?.unsubscribe();
+    this.subscriptionOrder?.unsubscribe();
   }
 
 }
