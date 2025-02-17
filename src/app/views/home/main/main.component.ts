@@ -3,6 +3,7 @@ import {CartService} from "../../../shared/services/cart.service";
 import {map, Subject, Subscription} from "rxjs";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {PopupComponent} from "../../../shared/components/popup/popup.component";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-main',
@@ -79,6 +80,9 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngOnInit(): void {
+
+    console.log(environment.production)
+
     const scripts = ['jquery-3.7.1.min.js', 'wow.min.js', 'jquery.magnific-popup.min.js', 'parallax.min.js', 'jquery.inputmask.min.js']
     scripts.forEach(script => {
       let node = document.createElement('script');
