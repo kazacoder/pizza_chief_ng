@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "http-server": "http-server dist/pizza_chief_ng"
+    "http-server": "http-server dist/pizza_chief_ng",
+    "build-gp": "ng build --output-path docs --base-href /pizza_chief_ng/"
   },
   "private": true,
   "dependencies": {
