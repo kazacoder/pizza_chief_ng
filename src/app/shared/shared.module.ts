@@ -9,6 +9,7 @@ import {IsChickenDirective} from "./directives/is-chicken.directive";
 import {ChickenProductsPipe} from "./pipes/chicken-products.pipe";
 import {RouterModule} from "@angular/router";
 import {CoolInputDirective} from "./directives/cool-input.directive";
+import { PopupComponent } from './components/popup/popup.component';
 
 
 
@@ -22,6 +23,7 @@ import {CoolInputDirective} from "./directives/cool-input.directive";
     WordUpperPipe,
     ChickenDescriptionPipe,
     CoolInputDirective,
+    PopupComponent,
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,8 @@ import {CoolInputDirective} from "./directives/cool-input.directive";
     ChickenProductsPipe,
     WordUpperPipe,
     ChickenDescriptionPipe,
-    CoolInputDirective
+    CoolInputDirective,
+    PopupComponent
   ]
 })
 export class SharedModule { }

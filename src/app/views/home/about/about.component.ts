@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {PopupComponent} from "../../../shared/components/popup/popup.component";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent implements OnInit, AfterViewInit {
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  @ViewChild(PopupComponent)
+  popup!: PopupComponent;
+
+  ngAfterViewInit() {
+
+    this.popup.open()
+
+    // this.modalService.open(this.popup, {})
   }
 
 }

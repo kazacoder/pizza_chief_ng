@@ -483,3 +483,6 @@ $third-color: rgb(56, 36, 0);
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
