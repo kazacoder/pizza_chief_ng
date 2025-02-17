@@ -48,6 +48,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/pizza_chief_ng/",
               "budgets": [
                 {
                   "type": "initial",
