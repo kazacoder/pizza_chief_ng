@@ -1,19 +1,25 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnDestroy, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {CartService} from "../../../shared/services/cart.service";
 import {map, Subject, Subscription} from "rxjs";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {PopupComponent} from "../../../shared/components/popup/popup.component";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent implements OnInit, OnDestroy {
+export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
 
   // private observable: Observable<string | number>;
   // private observable: Observable<number>;
   private promice: Promise<string>;
   private subscription: Subscription | null = null;
   private subject: Subject<number>;
+  public popupData = 'main component code';
+  // @ViewChild('popup')
+  // popup!: ElementRef<ElementRef>;
 
   constructor(public cartService: CartService) {
     let count = 0;
@@ -74,6 +80,9 @@ export class MainComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+
+    console.log(environment.production)
+
     const scripts = ['jquery-3.7.1.min.js', 'wow.min.js', 'jquery.magnific-popup.min.js', 'parallax.min.js', 'jquery.inputmask.min.js']
     scripts.forEach(script => {
       let node = document.createElement('script');
@@ -116,6 +125,15 @@ export class MainComponent implements OnInit, OnDestroy {
     //   console.log(param);
     // })
 
+  }
+
+
+  @ViewChild(PopupComponent)
+  private popupComponent!: PopupComponent;
+
+  ngAfterViewInit() {
+    // this.popupComponent.open()
+    // this.modalService.open(this.popup, {})
   }
 
   test() {
