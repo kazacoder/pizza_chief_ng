@@ -1,4 +1,4 @@
-FROM node:16-apline
+FROM node:16-alpine
 WORKDIR /frontend
 RUN npm install -g @angular/cli@14
 COPY package.json .
