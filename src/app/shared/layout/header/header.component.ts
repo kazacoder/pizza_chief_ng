@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {CartService} from "../../services/cart.service";
 import {AuthService} from "../../../core/auth/auth.service";
 
 @Component({
@@ -11,8 +10,7 @@ export class HeaderComponent implements OnInit {
 
   public loggedState: boolean = false;
 
-  constructor(public cartService: CartService,
-              private authService: AuthService) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
     this.authService.isLogged$.subscribe((isLoggedIn: boolean) => {

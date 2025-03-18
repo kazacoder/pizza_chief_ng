@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TextComponent } from './text.component';
+import {WordUpperPipe} from "../../pipes/word-upper.pipe";
+import {ChickenDescriptionPipe} from "../../pipes/chicken-description.pipe";
 
 describe('TextComponent', () => {
   let component: TextComponent;
@@ -8,7 +10,7 @@ describe('TextComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TextComponent ]
+      declarations: [ TextComponent, WordUpperPipe, ChickenDescriptionPipe ],
     })
     .compileComponents();
 
